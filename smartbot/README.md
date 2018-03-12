@@ -1,27 +1,18 @@
-# Smartbot
+ng generate class models/message 1. 메세지 객체를 만든다.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.2.
+ng generate component components/message-list 2. 메세지 목록을 만든다.
 
-## Development server
+ng generate component components/message-item 3. 메세지를 표시하는 구성요소를 만든다.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+ng generate component components/message-form 4. 메세지를 입력받고 보내는 양식을 만든다.
 
-## Code scaffolding
+5. NLP 백엔드로 DialogFlow 사용한다. environment.ts 에 토큰값을 입력한다.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+6. DialogFlow API 를 호출하고 응답을 검색하는 DigalogFlow 서비스를 생성한다.
 
-## Build
+7. ng generate service services/dialogflow (DialogFlow API 를 사용하여 자연어 를 텍스트 형식으로 처리한다. 각 API 요청에는 HTTP 헤더 에 Authorization 필드가 포합된다.)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+8. MessageFormComponent 에서 sendMessage() 메소드를 작성한다.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#Run
+ng serve
